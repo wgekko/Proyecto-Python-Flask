@@ -19,15 +19,15 @@
     <main>
         <form action="/{{empleado.id}}/edit" method="POST" enctype="multipart/form-data" class="my-10 mx-auto max-w-max p-3 border-2 border-indigo-700 rounded-lg">
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
-                <label for="" class="font-bold">Apellido y Nombre :</label>
+                <label for="" class="font-bold" required>Apellido y Nombre :</label>
                 <input type="text" name="nombre" class="border-2 border-indigo-700 p-1 rounded-md" value="{{ empleado.nombre }}">
             </fieldset>
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
-                <label for="" class="font-bold">Dirección : </label>
+                <label for="" class="font-bold" required>Dirección : </label>
                 <input type="text" name="direccion" class="border-2 border-indigo-700 p-1 rounded-md" value="{{ empleado.direccion }}">
             </fieldset>
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
-                <label for="" class="font-bold">Correo electrónico :</label>
+                <label for="" class="font-bold" required>Correo electrónico :</label>
                 <input type="email" name="correo" class="border-2 border-indigo-700 p-1 rounded-md" value="{{ empleado.correo }}">
             </fieldset>
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">

@@ -21,15 +21,15 @@
     <main>
         <form action="/create" method="POST" enctype="multipart/form-data" class="my-10 mx-auto max-w-max p-3 border-2 border-indigo-700 rounded-lg">
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
-                <label for="" class="font-bold"> Apellido y Nombre :</label>
+                <label for="" class="font-bold"required minlength="5" maxlength="50" > Apellido y Nombre :</label>
                 <input type="text" name="nombre" class="border-2 border-indigo-700 p-1 rounded-md">
             </fieldset>
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
-                <label for="" class="font-bold">Dirección :</label>
+                <label for="" class="font-bold"required minlength="10" maxlength="50" >Dirección :</label>
                 <input type="text" name="direccion" class="border-2 border-indigo-700 p-1 rounded-md">
             </fieldset>
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
-                <label for="" class="font-bold">Correo electrónico :</label>
+                <label for="" class="font-bold" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" >Correo electrónico :</label>
                 <input type="email" name="correo" class="border-2 border-indigo-700 p-1 rounded-md">
             </fieldset>
             <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
