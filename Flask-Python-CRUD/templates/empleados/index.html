@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Gestión Empleados</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6957f9fdd4.js" crossorigin="anonymous"></script>
+</head>
+<body class="flex flex-col justify-between min-h-screen">
+    <section>
+        <h1 class="font-bold text-center text-5xl text-indigo-700 my-10"> Gestión Empleados</h1>
+        <a href="/create" class="font-bold text-lg border-2 border-indigo-700 p-3 rounded-lg mx-auto max-w-max block my-10">Crear nuevo Empleado</a>
+    </section>
+    <main class="m-10">
+        {% if empleados %}
+        <section class="border-2 border-indigo-700 rounded-md p-3 mt-5 grid grid-cols-5 text-center bg-indigo-700 text-gray-100 font-bold text-xl">
+            <p>Apellido y Nombre</p>
+            <p>Dirección</p>
+            <p>Correo electrónico</p>
+            <p>Foto</p>
+            <p>Editar</p>
+            <p>Borrar</p>
+        </section>
+        <section class="border-2 border-indigo-700 rounded-md">
+            {% for empleado in empleados %}
+            <section class="rounded-md p-3 grid grid-cols-5 text-center items-center">
+                <p>{{ empleado.nombre }}</p>
+                <p>{{ empleado.direccion }}</p>
+                <p>{{ empleado.correo }}</p>
+                <img class="object-contain max-h-32 mx-auto" src="static/files/{{ empleado.fotos }}">
+                <a href="/{{ empleado.id }}/edit" class="text-indigo-700"><i class="fas fa-edit"></i></a>
+                <form action="/{{empleado.id}}/delete" method="POST">
+                    <button type="submit" class="text-indigo-700"><i class="fas fa-trash"></i></button>
+                </form>
+            </section>
+            {% endfor %}
+        </section>
+        {% else %}
+            <h3 class="text-center font-bold text-3xl text-indigo-700">No hay empleados</h3>
+        {% endif %}
+    </main>
+    {% include "footer.html" %}
+</body>
+</html>

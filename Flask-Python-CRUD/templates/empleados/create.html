@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Crear Empleado</title>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    {% if msg %}
+    <section class="my-10">
+        <h3 class="text-center font-bold text-green-700 text-3xl my-10">{{ msg }}</h3>
+        <a href="/" class="p-3 border-2 border-indigo-700 text-indigo-700 font-bold max-w-max mx-auto block">Volver</a>
+    </section>
+    {% else %}
+    <section>
+        <h1 class="text-indigo-700 font-bold text-4xl text-center my-10">Crear Empleado</h1>
+        <a href="/" class="p-3 border-2 border-indigo-700 text-indigo-700 font-bold max-w-max mx-auto block">Volver</a>
+    </section>
+    <main>
+        <form action="/create" method="POST" enctype="multipart/form-data" class="my-10 mx-auto max-w-max p-3 border-2 border-indigo-700 rounded-lg">
+            <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
+                <label for="" class="font-bold"> Apellido y Nombre :</label>
+                <input type="text" name="nombre" class="border-2 border-indigo-700 p-1 rounded-md">
+            </fieldset>
+            <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
+                <label for="" class="font-bold">Dirección :</label>
+                <input type="text" name="direccion" class="border-2 border-indigo-700 p-1 rounded-md">
+            </fieldset>
+            <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
+                <label for="" class="font-bold">Correo electrónico :</label>
+                <input type="email" name="correo" class="border-2 border-indigo-700 p-1 rounded-md">
+            </fieldset>
+            <fieldset class="grid grid-cols-2 w-full p-3 border-2 border-indigo-700 my-5 items-center">
+                <label for="" class="font-bold">Foto</label>
+                <input type="file" name="fotos" class="border-2 border-indigo-700 p-1 rounded-md">
+            </fieldset>
+            <button class="border-2 border-indigo-700 rounded-lg max-w-max px-3 py-1 mx-auto block my-5" type="submit">Enviar</button>
+        </form>
+    </main>
+    {% endif %}
+    {% include "footer.html" %}
+</body>
+</html>
